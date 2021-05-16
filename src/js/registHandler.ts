@@ -1,4 +1,4 @@
-import {handleDragEnd, handleDragEnter, handleDragLeave, handleDragOver, handleDragStart, handleDrop} from "./handlers.js"
+import {handleDragEnd, handleDragEnter, handleDragLeave, handleDragOver, handleDragStart, handleDrop} from "./handlers"
 
 
 export const addDraggableHandler = (elms: NodeListOf<HTMLElement>) => {
