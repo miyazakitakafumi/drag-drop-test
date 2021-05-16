@@ -10,33 +10,33 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/handlers.ts":
+/*!****************************!*\
+  !*** ./src/js/handlers.ts ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"handleDragStart\": () => (/* binding */ handleDragStart),\n/* harmony export */   \"handleDragEnd\": () => (/* binding */ handleDragEnd),\n/* harmony export */   \"handleDragEnter\": () => (/* binding */ handleDragEnter),\n/* harmony export */   \"handleDragOver\": () => (/* binding */ handleDragOver),\n/* harmony export */   \"handleDragLeave\": () => (/* binding */ handleDragLeave),\n/* harmony export */   \"handleDrop\": () => (/* binding */ handleDrop)\n/* harmony export */ });\nvar addEnterClass = function (ev) { return ev.target.classList.add('enter'); };\nvar removeEnterClass = function (ev) { return ev.target.classList.remove('enter'); };\nvar handleDragStart = function (ev) {\n    if (!ev.dataTransfer)\n        return;\n    ev.dataTransfer.setData('text/plain', ev.currentTarget.id);\n    ev.dataTransfer.effectAllowed = 'move';\n    ev.target.classList.add('dragging');\n};\nvar handleDragEnd = function (ev) {\n    ev.target.classList.remove('dragging');\n};\nvar handleDragEnter = function (ev) { };\nvar handleDragOver = function (ev) {\n    ev.preventDefault();\n    if (!ev.dataTransfer)\n        return;\n    ev.dataTransfer.dropEffect = 'move';\n    addEnterClass(ev);\n};\nvar handleDragLeave = function (ev) {\n    removeEnterClass(ev);\n};\nvar handleDrop = function (ev) {\n    ev.preventDefault();\n    if (!ev.dataTransfer)\n        return;\n    var draggedId = ev.dataTransfer.getData('text/plain');\n    var draggedElm = document.getElementById(draggedId);\n    if (!draggedElm)\n        return;\n    ev.target.append(draggedElm);\n    ev.dataTransfer.clearData();\n    removeEnterClass(ev);\n};\n\n\n//# sourceURL=webpack://drag-drop-test/./src/js/handlers.ts?");
+
+/***/ }),
+
 /***/ "./src/js/index.ts":
 /*!*************************!*\
   !*** ./src/js/index.ts ***!
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _registHandler_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./registHandler.js */ \"./src/js/registHandler.js\");\n\n(0,_registHandler_js__WEBPACK_IMPORTED_MODULE_0__.addDraggableHandler)(document.querySelectorAll('.draggable'));\n(0,_registHandler_js__WEBPACK_IMPORTED_MODULE_0__.addDroppableHandler)(document.querySelectorAll('.droppable'));\n\n\n//# sourceURL=webpack://drag-drop-test/./src/js/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _registHandler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./registHandler */ \"./src/js/registHandler.ts\");\n\n(0,_registHandler__WEBPACK_IMPORTED_MODULE_0__.addDraggableHandler)(document.querySelectorAll('.draggable'));\n(0,_registHandler__WEBPACK_IMPORTED_MODULE_0__.addDroppableHandler)(document.querySelectorAll('.droppable'));\n\n\n//# sourceURL=webpack://drag-drop-test/./src/js/index.ts?");
 
 /***/ }),
 
-/***/ "./src/js/handlers.js":
-/*!****************************!*\
-  !*** ./src/js/handlers.js ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"handleDragStart\": () => (/* binding */ handleDragStart),\n/* harmony export */   \"handleDragEnd\": () => (/* binding */ handleDragEnd),\n/* harmony export */   \"handleDragEnter\": () => (/* binding */ handleDragEnter),\n/* harmony export */   \"handleDragOver\": () => (/* binding */ handleDragOver),\n/* harmony export */   \"handleDragLeave\": () => (/* binding */ handleDragLeave),\n/* harmony export */   \"handleDrop\": () => (/* binding */ handleDrop)\n/* harmony export */ });\nvar addEnterClass = function (ev) { return ev.target.classList.add('enter'); };\nvar removeEnterClass = function (ev) { return ev.target.classList.remove('enter'); };\nvar handleDragStart = function (ev) {\n    if (!ev.dataTransfer)\n        return;\n    ev.dataTransfer.setData('text/plain', ev.currentTarget.id);\n    ev.dataTransfer.effectAllowed = 'move';\n    ev.target.classList.add('dragging');\n};\nvar handleDragEnd = function (ev) {\n    ev.target.classList.remove('dragging');\n};\nvar handleDragEnter = function (ev) { };\nvar handleDragOver = function (ev) {\n    ev.preventDefault();\n    if (!ev.dataTransfer)\n        return;\n    ev.dataTransfer.dropEffect = 'move';\n    addEnterClass(ev);\n};\nvar handleDragLeave = function (ev) {\n    removeEnterClass(ev);\n};\nvar handleDrop = function (ev) {\n    ev.preventDefault();\n    if (!ev.dataTransfer)\n        return;\n    var draggedId = ev.dataTransfer.getData('text/plain');\n    var draggedElm = document.getElementById(draggedId);\n    if (!draggedElm)\n        return;\n    ev.target.append(draggedElm);\n    ev.dataTransfer.clearData();\n    removeEnterClass(ev);\n};\n\n\n//# sourceURL=webpack://drag-drop-test/./src/js/handlers.js?");
-
-/***/ }),
-
-/***/ "./src/js/registHandler.js":
+/***/ "./src/js/registHandler.ts":
 /*!*********************************!*\
-  !*** ./src/js/registHandler.js ***!
+  !*** ./src/js/registHandler.ts ***!
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addDraggableHandler\": () => (/* binding */ addDraggableHandler),\n/* harmony export */   \"addDroppableHandler\": () => (/* binding */ addDroppableHandler)\n/* harmony export */ });\n/* harmony import */ var _handlers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./handlers.js */ \"./src/js/handlers.js\");\n\nvar addDraggableHandler = function (elms) {\n    elms.forEach(function (elm) {\n        elm.addEventListener('dragstart', _handlers_js__WEBPACK_IMPORTED_MODULE_0__.handleDragStart);\n        elm.addEventListener('dragend', _handlers_js__WEBPACK_IMPORTED_MODULE_0__.handleDragEnd);\n    });\n};\nvar addDroppableHandler = function (elms) {\n    elms.forEach(function (elm) {\n        elm.addEventListener('dragenter', _handlers_js__WEBPACK_IMPORTED_MODULE_0__.handleDragEnter);\n        elm.addEventListener('dragleave', _handlers_js__WEBPACK_IMPORTED_MODULE_0__.handleDragLeave);\n        elm.addEventListener('dragover', _handlers_js__WEBPACK_IMPORTED_MODULE_0__.handleDragOver);\n        elm.addEventListener('drop', _handlers_js__WEBPACK_IMPORTED_MODULE_0__.handleDrop);\n    });\n};\n\n\n//# sourceURL=webpack://drag-drop-test/./src/js/registHandler.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addDraggableHandler\": () => (/* binding */ addDraggableHandler),\n/* harmony export */   \"addDroppableHandler\": () => (/* binding */ addDroppableHandler)\n/* harmony export */ });\n/* harmony import */ var _handlers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./handlers */ \"./src/js/handlers.ts\");\n\nvar addDraggableHandler = function (elms) {\n    elms.forEach(function (elm) {\n        elm.addEventListener('dragstart', _handlers__WEBPACK_IMPORTED_MODULE_0__.handleDragStart);\n        elm.addEventListener('dragend', _handlers__WEBPACK_IMPORTED_MODULE_0__.handleDragEnd);\n    });\n};\nvar addDroppableHandler = function (elms) {\n    elms.forEach(function (elm) {\n        elm.addEventListener('dragenter', _handlers__WEBPACK_IMPORTED_MODULE_0__.handleDragEnter);\n        elm.addEventListener('dragleave', _handlers__WEBPACK_IMPORTED_MODULE_0__.handleDragLeave);\n        elm.addEventListener('dragover', _handlers__WEBPACK_IMPORTED_MODULE_0__.handleDragOver);\n        elm.addEventListener('drop', _handlers__WEBPACK_IMPORTED_MODULE_0__.handleDrop);\n    });\n};\n\n\n//# sourceURL=webpack://drag-drop-test/./src/js/registHandler.ts?");
 
 /***/ })
 
